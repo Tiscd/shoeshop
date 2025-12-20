@@ -1,0 +1,6 @@
+body { font-family: Arial; margin: 0; background: #f8f8f8; }
+.header { display: flex; justify-content: space-between; padding: 10px 16px; background: #fff; border-bottom: 1px solid #ddd; }
+.logo { font-weight: bold; font-size: 20px; }
+nav a { margin-right: 14px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px; }
+.card { background: #fff; padding: 12px; border: 1px solid #eee; border-radius: 8px; text-align: center; }
