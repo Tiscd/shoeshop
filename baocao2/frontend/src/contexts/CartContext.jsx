@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 export const CartContext = createContext();
 
@@ -21,10 +21,10 @@ export const CartProvider = ({ children }) => {
     setCart((prev) => prev.filter((item) => item.id !== id));
   };
 
-  const updateQuantity = (id, newQuantity) => {
-    if (newQuantity < 1) return;
+  const updateQuantity = (id, quantity) => {
+    if (quantity < 1) return;
     setCart((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item))
+      prev.map((item) => (item.id === id ? { ...item, quantity } : item))
     );
   };
 
@@ -38,3 +38,5 @@ export const CartProvider = ({ children }) => {
     </CartContext.Provider>
   );
 };
+
+export const useCart = () => useContext(CartContext);
